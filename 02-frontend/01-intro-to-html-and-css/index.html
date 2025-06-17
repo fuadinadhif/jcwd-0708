@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intro to HTML</title>
+    <style>
+      button {
+        background-color: rgb(255, 0, 0);
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      #logo-wrapper {
+        /* border-width: 2px;
+        border-color: #ababab !important;
+        border-style: dashed; */
+        border: 2px dashed #ababab;
+      }
+
+      .tagline {
+        color: yellowgreen;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <header id="logo-wrapper" style="border-color: green">
+      <img src="./assets/logo.svg" alt="A smiling cat" width="60" />
+      <span>Smiling Cat</span>
+    </header>
+    <main>
+      <section>
+        <h1
+          style="
+            text-transform: uppercase;
+            color: brown;
+            text-shadow: 0px 5px 15px red;
+          "
+        >
+          Welcome to The Smiling Cat!
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+          dolores deserunt adipisci voluptates dolorem, quas laudantium tempore?
+          Tempore sunt eveniet soluta, pariatur accusantium numquam rerum,
+          consequatur sapiente nesciunt quidem voluptas.
+        </p>
+        <figure>
+          <img
+            src="https://t4.ftcdn.net/jpg/02/66/72/41/360_F_266724172_Iy8gdKgMa7XmrhYYxLCxyhx6J7070Pr8.jpg"
+            class="hero-img"
+          />
+          <figcaption>Boxing cat</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h3 class="tagline">See our top product!</h3>
+        <h2>Smiling Cat Produts</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure libero
+          explicabo laboriosam nihil neque rerum nostrum esse quas qui
+          provident, reiciendis officiis culpa saepe sapiente voluptate magni
+          iste consequatur accusamus.
+        </p>
+
+        <h4>Our Top Products</h4>
+        <ul>
+          <li>Caviar</li>
+          <li>Tuna</li>
+          <li>Salmon</li>
+        </ul>
+
+        <h4>Step to Buy Our Products</h4>
+        <ol>
+          <li>Pick you desired product</li>
+          <li>Pay</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3 class="tagline">Our customer stories</h3>
+        <h2>Testimonies</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+          voluptate tempore culpa, hic consectetur maxime quibusdam excepturi
+          nihil ea recusandae dolorum assumenda dolore sapiente in, alias illo.
+          Veniam, inventore laudantium.
+        </p>
+      </section>
+
+      <section>
+        <h3 class="tagline">Give Us Your Best Feedback</h3>
+        <h2>Customer Feedback</h2>
+        <form>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" />
+          </div>
+
+          <div>
+            <label for="date">Date</label>
+            <input type="date" id="date" />
+          </div>
+
+          <div>
+            <label for="color">Favorite Color</label>
+            <input type="color" id="color" />
+          </div>
+
+          <div>
+            <label for="happy-meter">How happy are you?</label>
+            <input type="range" id="happy-meter" />
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea rows="5" id="message"></textarea>
+          </div>
+
+          <button>Send</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <a href="https://google.com">Visit Google.com</a>
+    </footer>
+  </body>
+</html>
