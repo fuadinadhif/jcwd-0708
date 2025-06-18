@@ -1,0 +1,87 @@
+/* CSS VARIABLES */
+:root {
+  --purple: rgba(115, 63, 200, 1);
+  --light-gray-100: rgba(72, 85, 106, 1);
+  --light-gray-25: rgba(72, 85, 106, 0.25);
+  ---dark-gray: rgba(25, 32, 45, 1);
+  --white: rgba(255, 255, 255, 1);
+  --sky-blue: rgba(236, 242, 248, 1);
+}
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--sky-blue);
+  min-height: 100vh;
+}
+
+.testimonies-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: 282px 282px; */
+  place-content: center;
+  column-gap: 30px;
+  row-gap: 24px;
+}
+
+.card-1 {
+  background-color: var(--purple);
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.card-2 {
+  background-color: var(--light-gray-100);
+}
+.card-3 {
+  background-color: var(--white);
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.card-4 {
+  background-color: var(--white);
+}
+.card-5 {
+  background-color: var(---dark-gray);
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 40px 60px 50px -47px var(--light-gray-25);
+  padding: 26px 32px;
+}
+
+.card-1,
+.card-2,
+.card-5 {
+  color: var(--white);
+}
+
+.card-3,
+.card-4 {
+  color: var(--light-gray-100);
+}
+
+@media (max-width: 375px) {
+  .testimonies-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    grid-column-start: unset;
+    grid-column-end: unset;
+    grid-row-start: unset;
+    grid-row-end: unset;
+  }
+}
