@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position Absoulute</title>
+    <style>
+      #one {
+        background-color: red;
+        width: 200px;
+        height: 100px;
+        position: relative;
+      }
+
+      #one {
+        #two {
+          background-color: hotpink;
+          width: 50%;
+          height: 25%;
+        }
+      }
+
+      #one #three {
+        background-color: aquamarine;
+        width: 50%;
+        height: 25%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="one">
+      1
+      <div id="two">2</div>
+      <div id="three">3</div>
+    </div>
+  </body>
+</html>

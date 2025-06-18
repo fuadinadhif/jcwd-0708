@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position Relative</title>
+    <style>
+      div {
+        width: 52px;
+        height: 52px;
+      }
+
+      div:nth-child(1) {
+        background-color: red;
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+
+      div:nth-child(2) {
+        background-color: yellow;
+      }
+
+      div:hover {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+  </body>
+</html>

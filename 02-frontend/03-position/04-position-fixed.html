@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position Fixed</title>
+    <style>
+      body {
+        height: 500vh;
+        border: 1px solid red;
+      }
+
+      #one {
+        background-color: red;
+        width: 200px;
+        height: 100px;
+      }
+
+      #two {
+        background-color: hotpink;
+        width: 50%;
+        height: 25%;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+      }
+
+      #three {
+        background-color: aquamarine;
+        width: 50%;
+        height: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="one">
+      1
+      <div id="two">2</div>
+      <div id="three">3</div>
+    </div>
+  </body>
+</html>
