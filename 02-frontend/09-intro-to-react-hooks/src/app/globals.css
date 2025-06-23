@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-black;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg py-4 px-6 shadow-xl flex gap-4 items-center;
+  }
+}
+
+/* @layer utilities {
+  .primary {
+  }
+} */
