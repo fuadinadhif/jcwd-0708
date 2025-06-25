@@ -1,28 +1,61 @@
 "use client";
 
-import { todoData } from "@/data/todo.data";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface Todo {
-  id: number;
+  objectId: number;
   text: string;
   completed: boolean;
 }
 
 export default function Home() {
-  const [todos, setTodos] = useState<Todo[]>(todoData);
+  const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState("");
   const [filter, setFilter] = useState("all");
 
-  function addTodo(event: React.FormEvent) {
-    event.preventDefault();
-    setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
-    setNewTodo("");
+  useEffect(() => {
+    async function getTodos() {
+      try {
+        const response = await fetch(
+          "https://goodlymice-us.backendless.app/api/data/todos"
+        );
+        const data = await response.json();
+        setTodos(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    getTodos();
+  }, []);
+
+  async function addTodo(event: React.FormEvent) {
+    try {
+      event.preventDefault();
+
+      const response = await fetch(
+        "https://goodlymice-us.backendless.app/api/data/todos",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text: newTodo }),
+        }
+      );
+
+      if (response.ok) {
+        setTodos([...todos, { text: newTodo }]);
+        setNewTodo("");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   function toggleDone(id: number) {
     const latestTodos = todos.map((item) => {
-      if (item.id === id) {
+      if (item.objectId === id) {
         return { ...item, completed: !item.completed };
       } else {
         return item;
@@ -65,10 +98,10 @@ export default function Home() {
 
           <div>
             {filteredTodos.map((item) => (
-              <div key={item.id} className="flex gap-2">
+              <div key={item.objectId} className="flex gap-2">
                 <button
                   className="border cursor-pointer"
-                  onClick={() => toggleDone(item.id)}
+                  onClick={() => toggleDone(item.objectId)}
                 >
                   {item.completed === true ? "Done" : "Not Done"}
                 </button>
