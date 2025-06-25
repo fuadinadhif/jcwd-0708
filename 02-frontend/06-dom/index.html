@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1 id="title">Hi, everybody!</h1>
+    <button>Hide Title</button>
+    <script>
+      const heading = document.getElementById("title");
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", () => {
+        if (heading.style.display === "none") {
+          heading.style.display = "block";
+          button.textContent = "Hide Title";
+        } else {
+          heading.style.display = "none";
+          button.textContent = "Show Title";
+        }
+      });
+    </script>
+  </body>
+</html>

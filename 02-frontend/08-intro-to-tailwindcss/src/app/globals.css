@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sky-blue: rgb(50, 90, 168);
+}
