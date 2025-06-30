@@ -20,7 +20,7 @@ export default function RootLayout({
           <div>
             <Image src="/vercel.svg" alt="Logo" width={30} height={30} />
           </div>
-          <Link href={"/create"} className="underline">
+          <Link href={"/products/create"} className="underline">
             Add New Product
           </Link>
         </header>
