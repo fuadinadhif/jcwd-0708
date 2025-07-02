@@ -1,7 +1,9 @@
 import Counter from "@/components/counter";
 import CursorCirle from "@/components/cursor-circle";
 import PopUp from "@/components/pop-up";
-import ScrollNavigation from "@/components/scroll-navigation";
+// import ScrollNavigation from "@/components/scroll-navigation";
+import CounterWithHistoryState from "@/components/counter-with-history-state";
+import CounterWithHistoryReducer from "@/components/counter-with-history-reducer";
 
 export default function Home() {
   return (
@@ -13,8 +15,10 @@ export default function Home() {
         <Counter />
         <PopUp />
         <CursorCirle />
+        <CounterWithHistoryState />
+        <CounterWithHistoryReducer />
       </div>
-      <ScrollNavigation />
+      {/* <ScrollNavigation /> */}
     </main>
   );
 }
