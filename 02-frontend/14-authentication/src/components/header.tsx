@@ -6,8 +6,6 @@ import { useSession } from "next-auth/react";
 export default function Header() {
   const { data: session } = useSession();
 
-  console.log(session);
-
   return (
     <header className="flex justify-between p-4">
       <h1>Logo</h1>

@@ -28,6 +28,14 @@ const mockUsers: MockUser[] = [
     image: "https://i.pravatar.cc/450?img=20",
     role: "AUTHOR",
   },
+  {
+    id: 3,
+    name: "Bob Marley",
+    email: "bob.marley@mail.com",
+    password: "newpass",
+    image: "https://i.pravatar.cc/450?img=30",
+    role: "READER",
+  },
 ];
 
 export async function GET(request: NextRequest) {
