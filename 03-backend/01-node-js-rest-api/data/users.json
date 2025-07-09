@@ -1,0 +1,21 @@
+[
+  {
+    "id": "ed680c66-03ba-4ae9-b371-fdf34bcd5a66",
+    "name": "Dudul",
+    "email": "dudul@mail.com"
+  },
+  {
+    "id": "42eb45d6-10dc-45ac-bec5-e8262e439490",
+    "name": "Nadhif",
+    "email": "nadhif@mail.com"
+  },
+  {
+    "id": "a6ea8275-349e-4fe7-8ad2-c3d4fa43cf01",
+    "name": "Budiman",
+    "email": "budiman@mail.com"
+  },
+  {
+    "id": "a0f6f1ab-b870-461d-bb22-006b178dc1b9",
+    "email": "budiman@mail.com"
+  }
+]
