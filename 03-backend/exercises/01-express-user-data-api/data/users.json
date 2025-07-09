@@ -1,0 +1,17 @@
+[
+  {
+    "id": "94a3ace7-d742-4dbc-9900-ce8b37e5696c",
+    "name": "John Doe",
+    "email": "john.doe@mail.com"
+  },
+  {
+    "id": "b7e3a0da-07db-4a39-9e09-b055e90bc259",
+    "name": "Jane Smith",
+    "email": "jane.smith@mail.com"
+  },
+  {
+    "id": "ab077379-bad3-4b0e-ac98-0bb7b561e1d7",
+    "name": "Kartika",
+    "email": "kartika@mail.com"
+  }
+]
