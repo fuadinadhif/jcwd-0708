@@ -1,0 +1,30 @@
+[
+  {
+    "id": "6dc7214e-c52a-4673-86c1-0eb5b19c1627",
+    "name": "Toothpaste",
+    "price": 12000,
+    "stock": 10,
+    "code": "PRD-01"
+  },
+  {
+    "id": "55e7b195-e914-4fb0-b1e7-714a6fedd750",
+    "name": "Indomie",
+    "price": 3500,
+    "stock": 100,
+    "code": "PRD-02"
+  },
+  {
+    "id": "0c07a3c4-a4bf-4dc4-b8e7-473519d6dab0",
+    "name": "Milo",
+    "price": 11000,
+    "stock": 50,
+    "code": "PRD-03"
+  },
+  {
+    "id": "3ab00fc0-50bb-4b97-a66f-9a0db000dfc3",
+    "name": "Magelangan",
+    "price": 12000,
+    "stock": 500,
+    "code": "PRD-04"
+  }
+]
