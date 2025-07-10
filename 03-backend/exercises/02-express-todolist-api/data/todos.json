@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1f3e3b74-5b1e-4a9d-991d-42e72e91a4a1",
+    "todo": "Belajar REST API dengan Express",
+    "completed": false,
+    "createdAt": 1752130246714,
+    "updatedAt": 1752130357825
+  },
+  {
+    "id": "44a8bcad-f063-4b01-9105-4a9fc59e53c2",
+    "todo": "Mengerjakan tugas backend",
+    "completed": true,
+    "createdAt": 1752130246714,
+    "updatedAt": 1752130357825
+  }
+]
