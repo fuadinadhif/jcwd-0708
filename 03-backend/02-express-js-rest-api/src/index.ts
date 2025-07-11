@@ -1,5 +1,6 @@
 import express, { Request, Response, Application, NextFunction } from "express";
 import productRouter from "./routes/product.route";
+import { notFoundMiddleware } from "./middlewares/not-found.middleware";
 
 const app: Application = express();
 
@@ -17,11 +18,7 @@ app.get("/api/v1/health", (request: Request, response: Response) => {
 app.use("/api/v1/products", productRouter);
 
 // NOT FOUND MIDDLEWARE
-app.use((request: Request, response: Response, next: NextFunction) => {
-  response
-    .status(404)
-    .json({ message: "The route you are looking for does not exist" });
-});
+app.use(notFoundMiddleware);
 
 // ERROR MIDDLEWARE
 app.use(

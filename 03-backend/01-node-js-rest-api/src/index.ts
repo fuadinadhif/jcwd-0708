@@ -31,3 +31,12 @@ const PORT = 8000;
 server.listen(PORT, () => {
   console.info(`Server is listening on port: ${PORT}`);
 });
+
+/* ---------------------------------- NOTES --------------------------------- */
+// const [userData, setUserData] = useState({name: "", email: ""})
+
+// fetch("http://localhost:8000/users?name="joko", {
+//   method: "POST"
+//   headers: {"Content-Type": "application/json" },
+//   body: JSON.stringify(userData)
+// })

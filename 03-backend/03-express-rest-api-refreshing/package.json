@@ -1,0 +1,20 @@
+{
+  "name": "03-express-rest-api-refreshing",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx --watch src/index.ts",
+    "start": "npm run build && node dist/index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "express": "^5.1.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.13",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

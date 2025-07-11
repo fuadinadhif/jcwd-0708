@@ -1,0 +1,26 @@
+[
+  {
+    "id": "5fcb0d26-f434-489c-9f9d-895f8ae6c7b6",
+    "title": "GoFood Gacoan",
+    "nominal": 45000,
+    "type": "expense",
+    "category": "food",
+    "date": 1751328000000
+  },
+  {
+    "id": "a56431df-bead-4ba3-beb8-9fa94b116c66",
+    "title": "Shopee Pashmina",
+    "nominal": 30000,
+    "type": "expense",
+    "category": "fashion",
+    "date": 1751673600000
+  },
+  {
+    "id": "abb5769d-abcf-425a-82bd-cb2985ad6a09",
+    "title": "Salary January",
+    "nominal": 3000000,
+    "type": "income",
+    "category": "salary",
+    "date": 1752203509842
+  }
+]
