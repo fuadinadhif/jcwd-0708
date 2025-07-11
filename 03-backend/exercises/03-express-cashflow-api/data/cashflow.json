@@ -1,0 +1,42 @@
+[
+  {
+    "id": "9c5e2789-1d9d-4e34-9818-b77794cecf5d",
+    "title": "Gajian Bulanan",
+    "nominal": 5000000,
+    "type": "income",
+    "category": "salary",
+    "date": "2025-07-01T00:00:00.000Z"
+  },
+  {
+    "id": "46eb01c4-b1f3-4e04-86e7-5a8f7b24d77a",
+    "title": "Beli Nasi Padang",
+    "nominal": 25000,
+    "type": "expense",
+    "category": "food",
+    "date": "2025-07-03T12:00:00.000Z"
+  },
+  {
+    "id": "44c72e6e-4b88-44db-a6be-9253bb1b2997",
+    "title": "Ongkir Shopee",
+    "nominal": 15000,
+    "type": "expense",
+    "category": "shopping",
+    "date": "2025-07-05T09:30:00.000Z"
+  },
+  {
+    "id": "f3e82db1-7f4d-48e0-b7cd-51e7c6a2bd4e",
+    "title": "Freelance Design",
+    "nominal": 750000,
+    "type": "income",
+    "category": "freelance",
+    "date": "2025-07-06T15:45:00.000Z"
+  },
+  {
+    "id": "a6372d27-9148-4eeb-b4ea-2a3b4cb22387",
+    "title": "Ngopi di Cafe",
+    "nominal": 40000,
+    "type": "expense",
+    "category": "lifestyle",
+    "date": "2025-07-07T18:20:00.000Z"
+  }
+]
