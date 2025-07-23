@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
 
 import { prisma } from "@/configs/prisma.config.js";
+import { Role } from "@/generated/prisma/index.js";
 
 async function seed() {
   try {
@@ -20,21 +21,34 @@ async function seed() {
       const password = "newpass";
       const profilePic = faker.image.avatar();
 
-      console.info(`Creating ${firstName} data...`);
+      let role = "READER";
+      if (i === 0) role = "ADMIN";
+      else if (i >= 1 && i <= 3) role = "AUTHOR";
+
+      console.info(`Creating ${role} user: ${firstName} ${lastName}...`);
 
       const user = await prisma.user.create({
-        data: { firstName, lastName, email, password, profilePic },
+        data: {
+          firstName,
+          lastName,
+          email,
+          password,
+          profilePic,
+          role: role as unknown as Role,
+        },
       });
 
-      const articleCount = faker.number.int({ min: 3, max: 10 });
-      for (let j = 0; j < articleCount; j++) {
-        const title = faker.lorem.sentence({ min: 3, max: 5 });
-        const content = faker.lorem.paragraphs({ min: 3, max: 10 });
-        const image = faker.image.url();
+      if (role === "AUTHOR") {
+        const articleCount = faker.number.int({ min: 3, max: 10 });
+        for (let j = 0; j < articleCount; j++) {
+          const title = faker.lorem.sentence({ min: 3, max: 5 });
+          const content = faker.lorem.paragraphs({ min: 3, max: 10 });
+          const image = faker.image.url();
 
-        await prisma.article.create({
-          data: { title, content, image, userId: user.id },
-        });
+          await prisma.article.create({
+            data: { title, content, image, userId: user.id },
+          });
+        }
       }
     }
 
