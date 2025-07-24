@@ -1,0 +1,47 @@
+[2025-07-24T04:02:46.174Z]: 
+Invalid `prisma.user.findUnique()` invocation in
+/home/blackie/insider/purwadhika/jcwd-0708/03-backend/08-class-based/src/services/auth.service.ts:15:36
+
+  12 
+  13 export class AuthService {
+  14   async isEmailTaken(email: string) {
+→ 15     const user = await prisma.user.findUnique({
+           where: {
+             email: undefined,
+         ?   id?: Int,
+         ?   AND?: UserWhereInput | UserWhereInput[],
+         ?   OR?: UserWhereInput[],
+         ?   NOT?: UserWhereInput | UserWhereInput[],
+         ?   firstName?: StringFilter | String,
+         ?   lastName?: StringFilter | String,
+         ?   password?: StringFilter | String,
+         ?   profilePic?: StringFilter | String,
+         ?   createdAt?: DateTimeFilter | DateTime,
+         ?   updatedAt?: DateTimeFilter | DateTime
+           }
+         })
+
+Argument `where` of type UserWhereUniqueInput needs at least one of `id` or `email` arguments. Available options are marked with ?.[2025-07-24T04:04:58.225Z]: 
+Invalid `prisma.user.findUnique()` invocation in
+/home/blackie/insider/purwadhika/jcwd-0708/03-backend/08-class-based/src/services/auth.service.ts:15:36
+
+  12 
+  13 export class AuthService {
+  14   async isEmailTaken(email: string) {
+→ 15     const user = await prisma.user.findUnique({
+           where: {
+             email: undefined,
+         ?   id?: Int,
+         ?   AND?: UserWhereInput | UserWhereInput[],
+         ?   OR?: UserWhereInput[],
+         ?   NOT?: UserWhereInput | UserWhereInput[],
+         ?   firstName?: StringFilter | String,
+         ?   lastName?: StringFilter | String,
+         ?   password?: StringFilter | String,
+         ?   profilePic?: StringFilter | String,
+         ?   createdAt?: DateTimeFilter | DateTime,
+         ?   updatedAt?: DateTimeFilter | DateTime
+           }
+         })
+
+Argument `where` of type UserWhereUniqueInput needs at least one of `id` or `email` arguments. Available options are marked with ?.[2025-07-24T04:34:31.752Z]: Email already exist[2025-07-24T04:50:52.819Z]: Email already exist
