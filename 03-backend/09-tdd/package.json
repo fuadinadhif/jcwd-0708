@@ -1,0 +1,30 @@
+{
+  "name": "express-template",
+  "scripts": {
+    "build": "tsc",
+    "dev": "NODE_ENV=development && tsx --watch src/app.ts",
+    "start": "NODE_ENV=production && node src/app.js",
+    "seed": "tsx prisma/seed.ts",
+    "test": "vitest"
+  },
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^6.12.0",
+    "bcrypt": "^6.0.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.1.0",
+    "@types/supertest": "^6.0.3",
+    "nock": "^14.0.6",
+    "prisma": "^6.12.0",
+    "supertest": "^7.1.4",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
