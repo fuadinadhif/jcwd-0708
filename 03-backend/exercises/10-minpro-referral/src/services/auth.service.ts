@@ -3,8 +3,11 @@ import bcrypt from "bcrypt";
 import { prisma } from "@/configs/prisma.config.js";
 import { CreateUserInput } from "@/types/user.type.js";
 import { generateReferralCode } from "@/utils/generate-code.js";
+import { ReferralService } from "./referral.service.js";
 
 export class AuthService {
+  referralService = new ReferralService();
+
   async isEmailTaken(email: string) {
     const user = await prisma.user.findUnique({ where: { email } });
     return Boolean(user);
@@ -32,6 +35,14 @@ export class AuthService {
       },
       omit: { password: true },
     });
+
+    if (referredReferralCode) {
+      await this.referralService.applyReferral(
+        referredReferralCode,
+        user.id,
+        user.name
+      );
+    }
 
     return user;
   }

@@ -1,3 +1,4 @@
+// Singleton Pattern -> Design Pattern
 import { PrismaClient } from "@/generated/prisma/index.js";
 
 const globalForPrisma = globalThis as unknown as {

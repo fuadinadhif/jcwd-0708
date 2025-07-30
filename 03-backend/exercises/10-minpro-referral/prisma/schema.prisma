@@ -40,7 +40,7 @@ model Point {
 model Coupon {
   id        Int      @id @default(autoincrement())
   userId    Int      @unique
-  code      String   @db.Char(17)
+  code      String   @db.Char(20)
   nominal   Int      @default(25)
   isUsed    Boolean  @default(false)
   expiredAt DateTime
