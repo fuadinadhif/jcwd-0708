@@ -3,7 +3,6 @@ import { Request, Response, NextFunction } from "express";
 import { AuthService } from "@/services/auth.service.js";
 
 const authService = new AuthService();
-
 export class AuthController {
   async register(request: Request, response: Response, next: NextFunction) {
     try {

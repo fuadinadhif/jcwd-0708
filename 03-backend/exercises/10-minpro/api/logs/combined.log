@@ -39,3 +39,5 @@ Invalid `prisma.user.create()` invocation in
   27 }: CreateUserInput) {
 → 28   const user = await prisma.user.create(
 Unique constraint failed on the fields: (`email`)
+[2025-08-01T16:20:59.607+07:00] [info]: Server is listening on port: 8000
+[2025-08-01T17:05:07.216+07:00] [info]: Server is listening on port: 8000

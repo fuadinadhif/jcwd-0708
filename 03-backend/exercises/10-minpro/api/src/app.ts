@@ -1,4 +1,5 @@
 import express, { Application, Request, Response } from "express";
+import cors from "cors";
 
 import { logger } from "@/utils/logger.js";
 import { errorMiddleware } from "./middlewares/error.middleware.js";
@@ -17,6 +18,7 @@ export class App {
   }
 
   setupMiddlewares() {
+    this.app.use(cors({ origin: "http://localhost:3000" }));
     this.app.use(express.json());
   }
 
