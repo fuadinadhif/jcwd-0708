@@ -1,11 +1,13 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 
 import { logger } from "@/utils/logger.js";
 import { errorMiddleware } from "./middlewares/error.middleware.js";
 import { notFoundMiddleware } from "./middlewares/not-found.middleware.js";
 
 import authRoutes from "./routes/auth.route.js";
+import exampleRoutes from "./routes/example.route.js";
 
 export class App {
   public readonly app: Application;
@@ -20,6 +22,7 @@ export class App {
   setupMiddlewares() {
     this.app.use(cors({ origin: "http://localhost:3000" }));
     this.app.use(express.json());
+    this.app.use(cookieParser());
   }
 
   setupRoutes() {
@@ -31,6 +34,7 @@ export class App {
     });
 
     this.app.use("/api/auth", authRoutes);
+    this.app.use("/api/examples", exampleRoutes);
   }
 
   setupErrorMiddlewares() {

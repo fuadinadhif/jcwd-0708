@@ -3,6 +3,13 @@ import { Request, Response, NextFunction } from "express";
 import { AuthService } from "@/services/auth.service.js";
 
 const authService = new AuthService();
+const COOKIE_OPTIONS = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "strict" as const,
+  maxAge: 1000 * 60 * 60,
+};
+
 export class AuthController {
   async register(request: Request, response: Response, next: NextFunction) {
     try {
@@ -22,9 +29,23 @@ export class AuthController {
     }
   }
 
-  async login() {}
+  async login(request: Request, response: Response, next: NextFunction) {
+    try {
+      const { email, password } = request.body;
 
-  async logout() {}
+      const { accessToken } = await authService.loginUser(email, password);
 
-  async forgetPassword() {}
+      response.cookie("accessToken", accessToken, COOKIE_OPTIONS);
+      response.status(200).json({ message: "Logged in succesfully" });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async logout(request: Request, response: Response, next: NextFunction) {
+    response
+      .clearCookie("accessToken", COOKIE_OPTIONS)
+      .status(200)
+      .json({ message: "Logout successfully" });
+  }
 }

@@ -1,9 +1,11 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 import { prisma } from "@/configs/prisma.config.js";
 import { CreateUserInput } from "@/types/user.type.js";
 import { generateReferralCode } from "@/utils/generate-code.js";
 import { ReferralService } from "./referral.service.js";
+import { AppError } from "@/errors/app.error.js";
 
 export class AuthService {
   referralService = new ReferralService();
@@ -13,11 +15,6 @@ export class AuthService {
     return Boolean(user);
   }
 
-  async hashedPassword(password: string) {
-    const hashedPassword = await bcrypt.hash(password, 12);
-    return hashedPassword;
-  }
-
   async registerUser({
     name,
     email,
@@ -25,11 +22,13 @@ export class AuthService {
     profilePic,
     referredReferralCode,
   }: CreateUserInput) {
+    const hashedPassword = await bcrypt.hash(password, 12);
+
     const user = await prisma.user.create({
       data: {
         name,
         email,
-        password: await this.hashedPassword(password),
+        password: hashedPassword,
         profilePic,
         referralCode: generateReferralCode(name),
       },
@@ -46,14 +45,28 @@ export class AuthService {
 
     return user;
   }
+
+  async loginUser(email: string, password: string) {
+    const existingUser = await prisma.user.findUnique({ where: { email } });
+    if (!existingUser) {
+      throw new AppError("Invalid credentials", 401);
+    }
+
+    const isMatch = await bcrypt.compare(password, existingUser.password);
+    if (!isMatch) {
+      throw new AppError("Invalid credentials", 401);
+    }
+
+    const payload = {
+      id: existingUser.id,
+      name: existingUser.name,
+      email: existingUser.email,
+      role: existingUser.role,
+    };
+    const accessToken = jwt.sign(payload, process.env.JWT_SECRET as string, {
+      expiresIn: "1h",
+    });
+
+    return { user: existingUser, accessToken };
+  }
 }
-
-/* ---------------------------------- NOTES --------------------------------- */
-// const authService = new AuthService();
-// authService.registerUser({
-//   name: "Joko Pinurbo",
-//   email: "joko.pinurbo@mail.com",
-//   profilePic: "http://dummy.com",
-// });
-
-// DISC-25-OFF-NAD-4X12
